@@ -1,42 +1,56 @@
 import React from "react";
-import TodoApp from "./TodoApp";
+import './App.css';
+import {Box, Button, Modal, Typography} from "@mui/material";
 
 class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputValue: '',
-        };
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleAddTask = this.handleAddTask.bind(this);
-        this.handleSearch = this.handleSearch.bind(this);
-    }
+    popUpStyle = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: '#706f6f',
+        border: '2px solid #000',
+        p: 2,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    };
 
-    handleInputChange(event) {
-        this.setState({ inputValue: event.target.value });
+    render() {
+        return (
+            <div className="searchBarDiv">
+                <input
+                    className="searchBar"
+                    placeholder="Recherche..."
+                    value={this.props.searchText}
+                    onChange={this.props.handleSearch}
+                />
+                <br/>
+                <button className="btnOpenModal" onClick={this.props.openModal}>Ajouter une tâche</button>
+                <Modal
+                    open={this.props.open}
+                    onClose={this.props.closeModal}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+
+                    <Box sx={this.popUpStyle}>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                        </Typography>
+                        <input className="inputAddTask" onChange={this.props.handleInputChange}></input>
+                        <button className="buttonModal" onClick={() => this.handleAddTask()}>Ajouter</button>
+                        <button className="buttonModal" onClick={this.props.closeModal}>Annuler</button>
+                    </Box>
+                </Modal>
+            </div>
+        );
     }
 
     handleAddTask() {
         this.props.addTask();
-        this.setState({ inputValue: '' });
-    }
-
-    handleSearch(event) {
-        this.props.onSearch(event.target.value);
-    }
-
-    render() {
-        return (
-            <div>
-                <input
-                    type="text"
-                    placeholder="Recherche..."
-                    value={this.props.searchText}
-                    onChange={this.handleSearch}
-                />
-                <button onClick={this.handleAddTask}>Ajouter une tâche</button>
-            </div>
-        );
+        this.props.closeModal();
     }
 }
 

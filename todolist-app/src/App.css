@@ -1,0 +1,107 @@
+/*----------------Global-------------------*/
+
+body {
+    background: #7a7a7a;
+    padding: 1vh;
+    color: white;
+}
+
+
+h2 {
+    font-weight: bold;
+    font-size: 37px;
+}
+
+
+/*----------------Task List-------------------*/
+
+.btnDiv {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+
+.delete {
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    margin-left: 40px;
+}
+
+.orderBtn {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+li {
+    margin: 0.5vw;
+    background-color: #acacac;
+    display: inline-block;
+    padding: 10px;
+    vertical-align: middle;
+    border-radius: 20px;
+    border: black 1px solid;
+    height: 150px;
+    width: 150px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/*----------------Footer-------------------*/
+
+.searchBarDiv {
+    background-color: white;
+    margin-top: 150px;
+    display: flex;
+    border-radius: 20px;
+    height: 40px;
+    width: 450px;
+}
+
+.searchBar {
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+    width: 300px;
+    font-size: 20px;
+
+}
+
+.btnOpenModal {
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #000000;
+    color: white;
+    height: 40px;
+    width: 150px;
+}
+
+.inputAddTask {
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    height: 25px;
+    width: 200px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 90vw;
+}
+
+.buttonModal {
+    border: none;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+}
